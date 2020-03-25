@@ -12,8 +12,8 @@ int main(int argc, char* argv[])
 	// Flags do SDL Init
 	/*
 	* SDL_INIT_TIMER		- Subsistema de timer
-	* SDL_INIT_AUDIO		- Subsistema de áudio
-	* SDL_INIT_VIDEO		- Subsistema de vídeo; inicializa automaticamente o subsistema de eventos
+	* SDL_INIT_AUDIO		- Subsistema de Ã¡udio
+	* SDL_INIT_VIDEO		- Subsistema de vÃ­deo; inicializa automaticamente o subsistema de eventos
 	* SDL_INIT_EVENTS		- Subsistema de eventos
 	* SDL_INIT_EVERYTHING	- Todos os subsistemas acima
 	*/
@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 	*/
 	if (SDL_Init(SDL_INIT_FLAGS) != 0)
 	{
-		printf("Não foi possivel iniciar o SDL! SDL_Error: %s\n", SDL_GetError());
+		printf("NÃ£o foi possivel iniciar o SDL! SDL_Error: %s\n", SDL_GetError());
 		return EXIT_FAILURE;
 	}
 	// Flags do SDL Window
@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
 	// Verifica se foi possivel criar uma janela
 	if (!window)
 	{
-		printf("Não foi possivel criar uma janela! SDL Error: %s\n", SDL_GetError());
+		printf("NÃ£o foi possivel criar uma janela! SDL Error: %s\n", SDL_GetError());
 		return EXIT_FAILURE;
 	}
 	// Flags do SDL Renderer
@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
 	// Verifica se foi possivel criar Renderer para a Janela
 	if (!renderer)
 	{
-		printf("Não foi possivel criar renderer para janela! SDL Error: %s\n", SDL_GetError());
+		printf("NÃ£o foi possivel criar renderer para janela! SDL Error: %s\n", SDL_GetError());
 		SDL_DestroyWindow(window);
 		return EXIT_FAILURE;
 	}
@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 	// Verifica se foi possivel carregar a imagem
 	if (!player.surface)
 	{
-		printf("Não foi possivel carregar a imagem! SDL Error: %s\n", SDL_GetError());
+		printf("NÃ£o foi possivel carregar a imagem! SDL Error: %s\n", SDL_GetError());
 		SDL_DestroyWindow(window);
 		SDL_DestroyRenderer(renderer);
 		SDL_Quit();
@@ -130,7 +130,7 @@ int main(int argc, char* argv[])
 	// Verifica se foi possivel carregar textura
 	if (!player.texture)
 	{
-		printf("Não foi possivel carregar a textura! SDL Error: %s\n", SDL_GetError());
+		printf("NÃ£o foi possivel carregar a textura! SDL Error: %s\n", SDL_GetError());
 		SDL_DestroyWindow(window);
 		SDL_DestroyRenderer(renderer);
 		SDL_Quit();
@@ -223,9 +223,9 @@ int main(int argc, char* argv[])
 		// Busca os Eventos do Rato(Mouse)
 		mouse.button = SDL_GetMouseState(&mouse.x, &mouse.y);
 		// Atualizacao do Dados do Jogo
+		// Gravidade do Player
 		if (game.keyboard->up && !game.keyboard->down && game.player.isGrounded)
 		{
-			//game.player.destinyRect.y -= GRAVITY_FORCE * JUMP_FORCE;
 			game.player.dy = -JUMP_FORCE;
 			game.player.isJumping = 1;
 		}
