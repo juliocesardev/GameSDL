@@ -21,15 +21,10 @@ typedef struct {
 } keyboard_t;
 // Mouse
 typedef struct {
-	int x;						// Posição X do Rato em relação ao Window
-	int y;						// Posição Y do Rato em relação ao Window
+	int x;						// PosiÃ§Ã£o X do Rato em relaÃ§Ã£o ao Window
+	int y;						// PosiÃ§Ã£o Y do Rato em relaÃ§Ã£o ao Window
 	uint32_t button;			// Numero do Botao do Rato(Pressionado)
 } mouse_t;
-// Transform
-typedef struct {
-	int x;						// Posição X
-	int y;						// Posição Y
-} transform_t;
 // Player
 typedef struct {
 	int isJumping;
@@ -38,7 +33,6 @@ typedef struct {
 	//
 	SDL_Surface *surface;		// Image do Player
 	SDL_Texture	*texture;		// Textura do Player
-	transform_t	*transform;		// Posição2D do Player 
 	SDL_Rect destinyRect;		// Rect
 } player_t;
 // Game
